@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+#define MAX 100
+int A[MAX];
+int top = -1;
+
+// Push Function
+void Push(int x)
+{
+    if (top == MAX - 1)
+    {
+        cout << "Stack Overflow" << endl;
+        return;
+    }
+    top++;
+    A[top] = x;
+}
+// Pop Function
+void Pop()
+{
+    if (top == -1)
+    {
+        cout << "Stack Underflow" << endl;
+        return;
+    }
+    --top;
+}
+
+// Top Function
+int Top()
+{
+    return A[top];
+}
+
+// Print Function
+void print()
+{
+    cout << "Stack : ";
+    for (int i = 0; i <= top; i++)
+    {
+        cout << A[i] << " ";
+    }
+}
+int main()
+{
+    Push(1);
+    Push(2);
+    Push(3);
+    print();
+    Pop();
+    print();
+    Pop();
+    print();
+    Pop();
+    print();
+
+    return 0;
+}
